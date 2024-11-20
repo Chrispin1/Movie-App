@@ -19,20 +19,18 @@ const Card = ({ cardWidth, movie }) => {
           ))}
         </div>
         <span className="gap-x-2 flex">
-          Original Language:{" "}
-          <span className="mr-2 uppercase">{originalLanguage}</span>
+          Original Language: <span className="mr-2 uppercase">EN</span>
         </span>
         <span className="flex gap-x-2">
-          Release Date:{" "}
-          <span className="mr-2 text-yellow-400">{releaseDate}</span>
+          Release Date: <span className="mr-2 text-yellow-400">1972-03-04</span>
         </span>
         <p className="flex flex-col gap-y-2">
           <span className="text-red-500">Summary: </span>
-          <span className=" first-letter:pl-2">{overview}</span>
+          <span className=" first-letter:pl-2">Summary Text</span>
         </p>
       </div>
       <img
-        src={image}
+        src={godfather}
         alt="Movie Image"
         className=" absolute w-[97%] h-[97%] rounded-xl opacity-50 group-hover:opacity-100 object-cover transition-opacity duration-500 z-0"
       />

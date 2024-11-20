@@ -6,6 +6,7 @@ const Home = () => {
   const cardInRow = 5;
   const [wrapperWidth, setWrapperWidth] = useState(cardWidth * cardInRow);
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const getMovies = async () => {
       const url =
@@ -13,8 +14,7 @@ const Home = () => {
       const options = {
         method: "GET",
         headers: {
-          "x-rapidapi-key":
-            "368bb91a40msh5a0dbb05e4412edp19e4c2jsn07f1ede22403",
+          "x-rapidapi-key": import.meta.env.VITE_API_KEY,
           "x-rapidapi-host": "tvshow.p.rapidapi.com",
         },
       };
@@ -25,14 +25,15 @@ const Home = () => {
         setMovies(result);
         console.log(result);
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching movies:", error);
       }
     };
     getMovies();
   }, []);
+
   return (
     <div
-      className="flex justify-center items-center "
+      className="flex justify-center items-center"
       style={{ width: wrapperWidth }}
     >
       <div className="flex flex-wrap">
