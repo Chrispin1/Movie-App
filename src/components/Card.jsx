@@ -20,22 +20,27 @@ const Card = ({ cardWidth, movie }) => {
         <h1 className="text-4xl">{title}</h1>
         <div className="flex items-center gap-x-2 ">
           <span className="text-lg">Genres: </span>
+
           {genres.map((genre, index) => (
-            <span key={index} className="font-semibold text-red-500">
+            <span
+              key={index}
+              className="font-semibold text-[#EB5E28] overflow-ellipsis"
+            >
               {genre}
             </span>
           ))}
         </div>
         <span className="gap-x-2 flex">
-          Original Language: <span className="mr-2 uppercase">EN</span>
+          Original Language:{" "}
+          <span className="mr-2 uppercase">{originalLanguage}</span>
         </span>
         <span className="flex gap-x-2">
           Release Date:{" "}
-          <span className="mr-2 text-yellow-400">{releaseDate}</span>
+          <span className="mr-2 text-[#EB5E28]">{releaseDate}</span>
         </span>
         <p className="flex flex-col gap-y-2">
-          <span className="text-red-500">Summary: </span>
-          <span className=" first-letter:pl-2 ">{overview}</span>
+          <span className="text-[#EB5E28]">Summary: </span>
+          <span className=" overflow-ellipsis ">{overview}</span>
         </p>
       </motion.div>
       <img
